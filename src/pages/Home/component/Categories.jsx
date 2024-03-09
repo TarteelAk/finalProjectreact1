@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Link } from 'react-router-dom';
 
 
 function Categories() {
@@ -44,7 +45,7 @@ function Categories() {
       categories.map(categorie =>(
         <SwiperSlide className={style.item} key={categorie._id}>
           <div className={style.card}>
-            <img src={categorie.image.secure_url}/>
+           <Link className={style.item} to={`/products/${categorie._id}`}><img src={categorie.image.secure_url}/></Link> 
             <h2>{categorie.name}</h2>
           </div>
         </SwiperSlide>

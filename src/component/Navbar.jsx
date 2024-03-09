@@ -13,12 +13,12 @@ const Navbar = ()=>{
             </div>
             <ul className={style.links}>
                 <li><Link className = {style.logo}to="/categories">Categories</Link></li>
-                <li><Link className = {style.logo}to="/products">Products</Link></li>
+                <li><Link className = {style.logo}to="/products/id">Products</Link></li>
                 <li><Link className = {style.logo}to="/cart">Cart</Link></li>
             </ul>
             <div className={style.autho}>
             <Link className = {style.logo} to="/signUp">Sign Up</Link>
-            <Link className = {style.logo} to="/signin">Sign In</Link>
+            <Link className = {style.logo} to="/signIn">Sign In</Link>
 
             </div>
 
