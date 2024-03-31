@@ -85,4 +85,28 @@ nav span{
     font-size: 10px;
   }
 }
+.btn{
+  
+  margin-right: 10px;
+  font-size: 1.3rem;
+  text-decoration: none;
+ padding: 2px;
+  border: 2px solid black;
+ 
+}
+.flex{
+  display: flex;
+  gap:10px;
+  font-size: 14px;
+  justify-content: center;
 
+  
+}
+.flex .log {
+  font-size: 1.3rem;
+  color: #333333;
+  text-decoration: none;
+  padding: 2px;
+  
+
+}

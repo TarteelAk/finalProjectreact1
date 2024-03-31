@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from "react";
-import style from "./Categories.module.css";
+import style from "./AllProduct.module.css";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 
-function Categories() {
-  const [categories, setCategories] = useState([]);
+export default function AllProduc() {
+  const [products, setProducts] = useState([]);
 
-  const getCategories = async () => {
+  const getProducts = async () => {
     const response = await fetch(
-      "https://ecommerce-node4-five.vercel.app/categories/active?page=1&limit=10"
+      "https://ecommerce-node4-five.vercel.app/products?page=1&limit=10"
     );
     const data = await response.json();
-    console.log(data.categories);
-    setCategories(data.categories);
+    console.log(data.products);
+    setProducts(data.products);
   };
   useEffect(() => {
-    getCategories();
+    getProducts();
   }, []);
 
   return (
@@ -39,16 +37,10 @@ function Categories() {
       >
         <div className="carousel">
           <div className="inner-carousel">
-            {categories.map((categorie) => (
-              <SwiperSlide className={style.item} key={categorie._id}>
+            {products.map((product) => (
+              <SwiperSlide className={style.item} key={product._id}>
                 <div className={style.card}>
-                  <Link
-                    className={style.item}
-                    to={`/products/${categorie._id}`}
-                  >
-                    <img src={categorie.image.secure_url} />
-                  </Link>
-                  <h2>{categorie.name}</h2>
+                  <img src={product.mainImage.secure_url} />
                 </div>
               </SwiperSlide>
             ))}
@@ -58,5 +50,3 @@ function Categories() {
     </div>
   );
 }
-
-export default Categories;

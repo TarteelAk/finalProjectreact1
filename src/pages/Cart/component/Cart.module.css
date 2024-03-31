@@ -1,0 +1,12 @@
+.cart1{
+
+    display: flex;
+    justify-content: space-between;
+}
+.decInc{
+    background-color: #545be8;
+    padding: 2px 3rem;
+}
+p{
+    border-bottom: 1px solid black;
+}
